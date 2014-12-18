@@ -1,0 +1,88 @@
+name = Umbrella
+description = One theme of snappytheme.com
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[info_home]         = 'Info home'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/overrides.css
+stylesheets[all][] = css/animate.css
+stylesheets[all][] = css/font-awesome.css
+stylesheets[all][] = css/jquery.bxslider.css
+stylesheets[all][] = css/magnific-opup.css
+stylesheets[all][] = css/YTPlayer.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/responsive.css
+
+; For information on choosing the desired method, please read the Drupal
+; Bootstrap sub-theme "how-to" documentation:
+; https://drupal.org/node/1978010
+
+; ;----------------------------------
+; ; METHOD 1: Bootstrap Source Files
+; ;----------------------------------
+; 
+; ;;;;;;;;;;;;;;;;;;;;;
+; ;; Scripts
+; ;;;;;;;;;;;;;;;;;;;;;
+; 
+; scripts[] = 'bootstrap/js/affix.js'
+; scripts[] = 'bootstrap/js/alert.js'
+; scripts[] = 'bootstrap/js/button.js'
+; scripts[] = 'bootstrap/js/carousel.js'
+; scripts[] = 'bootstrap/js/collapse.js'
+; scripts[] = 'bootstrap/js/dropdown.js'
+; scripts[] = 'bootstrap/js/modal.js'
+; scripts[] = 'bootstrap/js/tooltip.js'
+; scripts[] = 'bootstrap/js/popover.js'
+; scripts[] = 'bootstrap/js/scrollspy.js'
+; scripts[] = 'bootstrap/js/tab.js'
+; scripts[] = 'bootstrap/js/transition.js'
+;
+; ; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
+; settings[bootstrap_cdn] = ''
+
+scripts[] = 'js/bootstrap.js'
+scripts[] = 'js/jquery.migrate.js'
+scripts[] = 'js/jquery.appear.js'
+scripts[] = 'js/jquery.countTo.js'
+scripts[] = 'js/jquery.imagesloaded.min.js'
+scripts[] = 'js/jquery.magnific-popup.min.js'
+scripts[] = 'js/jquery.mb.YTPlayer.js'
+scripts[] = 'js/jquery.quovolver.js'
+scripts[] = 'js/jquery.stellar.min.js'
+scripts[] = 'js/plugins-scroll.js'
+scripts[] = 'js/retina-1.1.0.min.js'
+scripts[] = 'js/smooth-scroll.js'
+scripts[] = 'js/waypoints.js'
+scripts[] = 'js/script.js'
+
+
+; ;-------------------------
+; ; METHOD 2: Bootstrap CDN
+; ;-------------------------
+;
+; Method 2 uses BootstrapCDN, the only thing you might need to provide here
+; is overrides to Bootstrap theme settings. Copy them here from the base theme
+; to override.

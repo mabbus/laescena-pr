@@ -1,0 +1,8 @@
+name = Block animation
+package = snappytheme
+description = Setting block animation, block image background, block video background, block parralax, ...
+
+version = "7.x-1.0"
+core = "7.x"
+project = "block_animation"
+datestamp = "1406338351"
