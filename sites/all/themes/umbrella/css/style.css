@@ -84,8 +84,8 @@ header {
 }
 
 .navbar-nav {
-    margin-top: 40px;
-    margin-bottom: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .navbar-default .navbar-nav > li {
@@ -1793,11 +1793,11 @@ footer ul.social-icons li a:hover i {
     margin: 0 auto;
 }
 
-.view-display-id-block_1 .view-header {
+#block-views-calendar-home-page-week .view-header {
     display: none;
 }
 
-.view-display-id-block_1 {
+#block-views-calendar-home-page-week {
     position: relative;;
     z-index: 1;
     top: 170px;
@@ -1830,3 +1830,38 @@ h1 {
     font-size: 30px;
 }
 
+.logo img {
+    height: 30px;
+}
+
+.view .date-nav-wrapper {
+    margin-top: 20px;
+}
+
+.view .date-nav-wrapper .date-prev {
+    margin-right: 17px;
+}
+
+.nav-tabs {
+    display: none;
+}
+
+.contact-box {
+    padding: 0 0 75px 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    padding: 0 15px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #000;
+}
+
+..navbar-nav > li > a {
+    padding: 0;
+}
+
+.navbar-toggle {
+    margin-top: 10px !important;
+}
