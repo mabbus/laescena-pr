@@ -295,3 +295,40 @@ $(document).ready(function($) {
 	});
 
 });
+
+$(document).ready(function($) {
+    var isFront = $('.front').length > 0;
+    var isMes = $('.page-calendario-mes').length > 0;
+    
+    function onResize() {
+	if(isFront) {
+	    var homeHeight = $('#home-section').height();
+	    var calHeight = $('.view-calendar').height();
+	    var overflow = Math.abs(homeHeight - calHeight);
+	    var padding = overflow / 2;
+
+	    $('#block-views-calendar-home-page-week').css({'top': padding});
+	    console.log(overflow);
+	    if(calHeight > homeHeight) {
+		$('.calendar-calendar table').height($('.view-calendar').height() - $('.view-header').height() - (overflow*3));
+	    }
+	}
+    }
+
+    $(window).resize(function () {
+	onResize();
+    });
+
+    if(!isFront || !isMes) {
+	$('.views-field-field-date').remove();
+	$('.views-field-title').css({'padding-top': 10});	
+    }
+
+    var isEvent = $('.node-type-portfolio').length > 0;
+
+    if(isEvent) {
+	var text = $('.node-teaser').find('h2').find('a').text();
+	$('.node-teaser').find('h2').find('a').remove();
+	$('.node-teaser').find('h2').text(text);
+    }
+});

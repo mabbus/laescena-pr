@@ -167,6 +167,16 @@ header {
     margin-top: 50px;
 }
 
+@media screen and (min-width: 680px) {
+    #home-section {
+	#background: url('/sites/dxoefault/files/cabret/kaboom.jpg') center no-repeat;
+	background: url('/sites/default/files/cabret/hands.jpg') center no-repeat;
+	background-size: 100% auto;
+	position: relative;
+	margin-top: 50px;
+    }
+}
+
 #home-section:after {
     content: '';
     position: absolute;
@@ -1630,11 +1640,11 @@ ul.share-icons li a:hover i {
 
 .project-details h2 {
     color: #252525;
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
-    margin: 0 0 25px;
+    margin: 10px 0 20px;
 }
 
 .project-details ul.project-list {
@@ -1780,29 +1790,62 @@ footer ul.social-icons li a:hover i {
     background-color: transparent !important;
 }
 
-.calendar-calendar tbody {
+.calendar-calendar {
+    font-family: 'Roboto', sans-serif;
+}
+
+.calendar-calendar tr {
+    border-spacing: 0;
+    height: 10px !important;
+}
+
+.calendar-calendar .week-view .full td.multi-day div.weekview, .calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff, .calendar-calendar .week-view .full td.multi-day .calendar.weekview .contents {
+    background: #74a5d7 !important;    
+}
+
+.calendar-calendar table {
     background-color: rgba(255,255,255,.7);
 }
 
 .calendar-calendar table {
-    height: 400px;
+    width:100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-collapse: collapse;
 }
 
-.view-calendar .view-content {
+.view-id-homepage .view-content {
     width: 80%;
     margin: 0 auto;
+    color: #000;
 }
 
-#block-views-calendar-home-page-week .view-header {
+.calendar-calendar div.calendar {
+    background: none;
+}
+
+.view-id-homepage .view-header {
+    color: #fff;
+}
+
+.view-id-homepage .pager {
     display: none;
 }
 
-#block-views-calendar-home-page-week {
+.view-id-homepage {
     position: relative;;
     z-index: 1;
     top: 170px;
     width: 100%;
     height: 400px;
+}
+
+.calendar-calendar .week-view .full .first td.multi-day {
+    border-collapse: collapse;
+    border-spacing: 0 !important;;
+    padding:0 !important;
+    margin: 0 !important;
 }
 
 .calendar-calendar .week-view .full td.multi-day div.weekview,
@@ -1811,11 +1854,11 @@ footer ul.social-icons li a:hover i {
     background: #f13f0f;
 }
 
+.view-id-homepage a,
 div.calendar.weekview a {
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
+    font-size: 10px;
 }
 
 .pane-views-sliderhome-block {
@@ -1832,10 +1875,6 @@ h1 {
 
 .logo img {
     height: 30px;
-}
-
-.view .date-nav-wrapper {
-    margin-top: 20px;
 }
 
 .view .date-nav-wrapper .date-prev {
@@ -1864,4 +1903,56 @@ h1 {
 
 .navbar-toggle {
     margin-top: 10px !important;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: grey;
+}
+
+.page-node .node-teaser h2 {
+    font-size: 14px;
+    text-transform: none;
+    margin-bottom: 5px;
+}
+
+.alert-block {
+    display: none;
+}
+
+.admin .alert-block {
+    display: block;
+}
+
+.view-id-homepage a,
+.calendar-calendar .month-view .full td.single-day .inner div, .calendar-calendar .month-view .full td.single-day .inner div a, .calendar-calendar .month-view .full td.multi-day .inner div, .calendar-calendar .month-view .full td.multi-day .inner div a, .calendar-calendar .month-view .full td .inner div.calendar.monthview div, .calendar-calendar .month-view .full td .inner div.calendar.monthview div a, .calendar-calendar .week-view .full td.single-day .inner div, .calendar-calendar .week-view .full td.single-day .inner div a, .calendar-calendar .week-view .full td.multi-day .inner div, .calendar-calendar .week-view .full td.multi-day .inner div a, .calendar-calendar .week-view .full td .inner div.calendar.weekview div, .calendar-calendar .week-view .full td .inner div.calendar.weekview div a, .calendar-calendar .day-view .full td .inner div.view-item, .calendar-calendar .day-view .full td .inner div.calendar div, .calendar-calendar .day-view .full td .inner div.calendar div a {
+    font-weight: normal;
+    /*background: #f13f0f !important;*/
+    padding-bottom: 1px;
+    color: #000;
+    background: none;
+
+}
+
+.date-heading h3 a {
+    font-size: 20px;
+    color: #fff;
+    background: none !important;
+}
+
+.front .calendar-calendar tr td:first-child,
+.front .calendar-calendar tr th:first-child {
+    display:none;
+}
+
+.calendar-calendar .inner .item {
+    border-radius: 4px;
+    background: #9FE0E4 !important;    
+}
+
+.front .calendar-calendar .inner .item {
+    box-shadow: 0px 0px 4px 1px grey;
+}
+
+.cutoff, .continues {
+    background: none !important;
 }

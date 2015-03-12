@@ -86,3 +86,16 @@ function umbrella_css_alter(&$css) {
     }
   }
 }
+
+function umbrella_preprocess_node(&$variables) {
+    $variables['elements']['#node']->referencing_entity->field_url['und'][0]['value'] = '<a href="' . $variables['referencing_entity']->field_url['und'][0]['value'] . '" target="_blank">' . $variables['referencing_entity']->field_url['und'][0]['value'] . '</a>';
+    $variables['elements']['#node']->referencing_entity->field_url['und'][0]['safe_value'] = '<a href="' . $variables['referencing_entity']->field_url['und'][0]['safe_value'] . '" target="_blank">' . $variables['referencing_entity']->field_url['und'][0]['safe_value'] . '</a>';
+}
+
+function block_render($module, $block_id) {
+    $block = block_load($module, $block_id);
+    $block_content = _block_render_blocks(array($block));
+    $build = _block_get_renderable_array($block_content);
+    $block_rendered = drupal_render($build);
+    return $block_rendered;
+}
