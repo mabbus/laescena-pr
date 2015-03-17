@@ -43,29 +43,6 @@
  *
  * @ingroup themeable
  */
-?><!DOCTYPE html>
-<html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-  <?php print $head; ?>
-  <title><?php print $head_title; ?></title>
-  <?php print $styles; ?>
-  <!-- HTML5 element support for IE6-8 -->
-  <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <?php print $scripts; ?>
-</head>
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <div id="container">
-    <div id="skip-link">
-      <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
-    </div>
-    <?php print $page_top; ?>
-
-<?php 
 
 function check_user_agent ( $type = NULL ) {
     $user_agent = strtolower ( $_SERVER['HTTP_USER_AGENT'] );
@@ -96,6 +73,30 @@ function check_user_agent ( $type = NULL ) {
 }
 
 $isMobile = check_user_agent('mobile');
+$mobileClass = ($isMobile) ? 'mobile' : '';
+?><!DOCTYPE html>
+<html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+  <?php print $head; ?>
+  <title><?php print $head_title; ?></title>
+  <?php print $styles; ?>
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <?php print $scripts; ?>
+</head>
+<body class="<?php print $classes; ?> <?php print $mobileClass; ?>" <?php print $attributes;?>>
+  <div id="container">
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+    </div>
+    <?php print $page_top; ?>
+
+<?php 
 
 if(drupal_is_front_page() && $isMobile) {
     print views_embed_view('calendar', 'page_1');

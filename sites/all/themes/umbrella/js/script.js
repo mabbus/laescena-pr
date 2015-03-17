@@ -299,7 +299,14 @@ $(document).ready(function($) {
 $(document).ready(function($) {
     var isFront = $('.front').length > 0;
     var isMes = $('.page-calendario-mes').length > 0;
-    
+    var isMobile = $('.mobile').length > 0 ;
+
+    function cleanupTitle () {
+	var heading = $('.date-heading').find('h3').text().split(',');
+	var newHeading = heading[1].replace(/[0-9]/g,'') + heading[2];
+	$('.date-heading').find('h3').text(newHeading);	    
+    }
+
     function onResize() {
 	if(isFront) {
 	    var homeHeight = $('#home-section').height();
@@ -320,8 +327,29 @@ $(document).ready(function($) {
     });
 
     if(!isFront || !isMes) {
-	$('.views-field-field-date').remove();
-	$('.views-field-title').css({'padding-top': 10});	
+	if(!isMobile) {
+	    $('.views-field-field-date').remove();	    
+	} else {
+	    $('.front .calendar-calendar tr td:first-child, .front .calendar-calendar tr th:first-child').show();
+	    $('.date-heading h3').css({
+		'margin-top': '20px;',
+		'margin-left': '5px;',
+		'width': '400px',
+		'text-align': 'left',
+	    });
+	}
+	cleanupTitle();
+	$('.views-field-title').css({'padding-top': 10});
+    }
+
+    if(isMes) {
+	Drupal.behaviors.monthTitle = {
+	    attach: function (context, settings) {
+		cleanupTitle();
+	    }
+	}
+
+	cleanupTitle();
     }
 
     var isEvent = $('.node-type-portfolio').length > 0;
