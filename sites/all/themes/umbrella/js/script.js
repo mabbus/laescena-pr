@@ -301,7 +301,7 @@ $(document).ready(function($) {
     var isMes = $('.page-calendario-mes').length > 0;
     var isMobile = $('.mobile').length > 0 ;
 
-    function cleanupTitle () {
+    function cleanupTitle () {	
 	var heading = $('.date-heading').find('h3').text().split(',');
 	var newHeading = heading[1].replace(/[0-9]/g,'') + heading[2];
 	$('.date-heading').find('h3').text(newHeading);	    
@@ -338,7 +338,7 @@ $(document).ready(function($) {
 		'text-align': 'left',
 	    });
 	}
-	cleanupTitle();
+	
 	$('.views-field-title').css({'padding-top': 10});
     }
 
