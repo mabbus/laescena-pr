@@ -78,6 +78,8 @@ $mobileClass = ($isMobile) ? 'mobile' : '';
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
 <head>
   <meta charset="utf-8">
+  <meta name="keywords" content="La escena pr, la escena, escena pr, puerto rico, la escena puerto rico, eventos puerto rico, eventos, arte, musica">
+  <meta name="description" content="Crear conciencia de la rica y diversa cultura del entretenimiento que existe en la isla de Puerto Rico. La Escena - PR promete mantenerte al día con todo lo que está pasando en la comunidad artística de Puerto Rico.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php if(drupal_is_front_page()) { ?>
   <meta property="og:image" content="http://www.laescena-pr.com/sites/default/files/logo-80s_200x400.png" />
