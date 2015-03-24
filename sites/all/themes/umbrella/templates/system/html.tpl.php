@@ -79,6 +79,10 @@ $mobileClass = ($isMobile) ? 'mobile' : '';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php if(drupal_is_front_page()) { ?>
+  <meta property="og:image" content="http://www.laescena-pr.com/sites/default/files/logo-80s_200x400.png" />
+<?php } ?>
+  <meta property="og:title" content="<?php print $head_title;?>" />    
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
@@ -99,7 +103,10 @@ $mobileClass = ($isMobile) ? 'mobile' : '';
 <?php 
 
 if(drupal_is_front_page() && $isMobile) {
-    print views_embed_view('calendar', 'page_1');
+    $html = '<div class="logo"><img src="http://www.laescena-pr.com/sites/default/files/logo-80s_0.png" alt="HOME" /></div>';
+    $html .= '<br>';
+    $html .= views_embed_view('calendar', 'page_1');
+    print $html;
 } else {
     print $page;   
 } 

@@ -1833,6 +1833,14 @@ footer ul.social-icons li a:hover i {
     display: none;
 }
 
+.mobile .pager {
+    display: block;
+    clear: both;
+    position: relative;    
+    top: -20px;;
+    right: 0;
+}
+
 .view-id-homepage {
     position: relative;;
     z-index: 1;
