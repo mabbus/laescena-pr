@@ -108,11 +108,10 @@ $mobileClass = ($isMobile) ? 'mobile' : '';
     <?php print $page_top; ?>
 
 <?php 
-
-if(drupal_is_front_page() && $isMobile && false) {
+if(drupal_is_front_page() && $isMobile) {
     $html = '<div class="logo"><img src="http://www.laescena-pr.com/sites/default/files/logo-80s_0.png" alt="HOME" /></div>';
     $html .= '<br>';
-    $html .= views_embed_view('calendar', 'page_1');
+    $html .= views_embed_view('view_portfolio', 'block_1');
     print $html;
 } else {
     print $page;   
