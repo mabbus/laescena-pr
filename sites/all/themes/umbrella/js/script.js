@@ -328,7 +328,12 @@ $(document).ready(function($) {
 
     if(!isFront || !isMes) {
 	if(!isMobile) {
-	    $('.views-field-field-date').remove();	    
+	    $('.views-field-field-date').remove();
+	    var calHeader = $('div.date-heading h3');
+	    var headerLink = calHeader.find('a');
+	    var txt = headerLink.text();
+	    headerLink.remove();
+	    calHeader.text(txt);
 	} else {
 	    $('.front .calendar-calendar tr td:first-child, .front .calendar-calendar tr th:first-child').show();
 	    $('.date-heading h3').css({
