@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 
-$isMobile = true; //check_user_agent('mobile');
+$isMobile = check_user_agent('mobile');
 $mobileClass = ($isMobile) ? 'mobile' : '';
 
 ?>
