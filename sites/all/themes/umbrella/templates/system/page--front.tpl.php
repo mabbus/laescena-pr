@@ -72,12 +72,18 @@
  *
  * @ingroup themeable
  */
+
+$isMobile = true; //check_user_agent('mobile');
+$mobileClass = ($isMobile) ? 'mobile' : '';
+
 ?>
-<?php if (!empty($page['info_home'])): ?>
+<?php if (!empty($page['info_home'])) { ?>
+<?php if(drupal_is_front_page() && !$isMobile) {  ?>
   <div class="section-home" id="home-section">
     <?php print render($page['info_home']); ?>
   </div>
-<?php endif; ?>
+<?php } ?>
+<?php } ?>
 <header class="clearfix" id="clsheader">
   <!-- Static navbar -->
   <div class="navbar navbar-default <?php print get_class_menu(); ?>">
@@ -121,7 +127,13 @@
 </header>
 
 <div class="main-container">
+  <?php 
+    if(drupal_is_front_page() && $isMobile) {
+        $html = views_embed_view('view_portfolio', 'block_1');
+        print $html;
+    } else {
 
+    ?>
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
@@ -131,7 +143,6 @@
   </header> <!-- /#page-header -->
 
   <div class="main-content">
-
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-sm-3" role="complementary">
         <?php print render($page['sidebar_first']); ?>
@@ -160,6 +171,7 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
+
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
@@ -167,7 +179,7 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
-
+<?php } ?>
   </div>
 </div>
 <!-- footer 
