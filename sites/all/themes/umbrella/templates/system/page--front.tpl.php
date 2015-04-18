@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 ?>
-<?php if (!empty($page['info_home'])): ?>
+<?php if (!empty($page['info_home']) && !$isMobile): ?>
   <div class="section-home" id="home-section">
     <?php print render($page['info_home']); ?>
   </div>
@@ -159,7 +159,16 @@
       <?php if (!empty($action_links)): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+
+      
+      <?php if(!$isMobile): // normal page ?>
       <?php print render($page['content']); ?>
+      <?php endif; ?>
+
+      <?php if($isMobile): // mobile page ?>
+      <?php print views_embed_view('view_portfolio', 'block_1'); ?>
+      <?php endif; ?>
+  
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
