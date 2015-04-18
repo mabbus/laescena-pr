@@ -76,12 +76,13 @@
         <?php print $row; ?>
       </div>
     <?php endforeach; ?>
-    <?php
-    	$js = str_replace('@sortdata', $sortdata, $js);
+    <?php /*
+        $js = str_replace('@sortdata', $sortdata, $js);
     	drupal_add_js($js, array(
     		'type' => 'inline',
     		'scope' => 'header',
     		'weight' => 10,
     	));
+          */
     ?>
   </div>
