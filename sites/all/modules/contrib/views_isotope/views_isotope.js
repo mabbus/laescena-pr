@@ -1,6 +1,8 @@
 (function($) {
   $(document).ready(function() {
     var $container = $('#isotope-container');
+
+    if(!$container) return;
     
     $container.isotope({
     	itemSelector: '.isotope-element'
