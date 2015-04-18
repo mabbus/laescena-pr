@@ -59,7 +59,7 @@ function umbrella_theme() {
 
 function umbrella_preprocess(&$variables) {
     $variables['userAgent'] = explode(".",$_SERVER["SERVER_NAME"]);
-    $variables['isMobile'] = true; //check_user_agent('mobile');
+    $variables['isMobile'] = check_user_agent('mobile');
 }
 
 function umbrella_preprocess_page(&$variables) {
