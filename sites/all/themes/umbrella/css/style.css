@@ -1837,7 +1837,7 @@ footer ul.social-icons li a:hover i {
     display: block;
     clear: both;
     position: relative;    
-    top: -20px;;
+    top: 10px;;
     right: 0;
 }
 
@@ -1963,4 +1963,14 @@ h1 {
 
 .cutoff, .continues {
     background: none !important;
+}
+
+.mobileEventHome {
+    border-bottom: 2px solid;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.view-display-id-block_1 .view-content {
+    text-align: center;
 }
