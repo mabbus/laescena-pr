@@ -310,14 +310,14 @@ $(document).ready(function($) {
     function onResize() {
 	if(isFront) {
 	    var homeHeight = $('#home-section').height();
-	    var calHeight = $('.view-calendar').height();
+	    var calHeight = $('.view-id-homepage').find('.view-content').height();
 	    var overflow = Math.abs(homeHeight - calHeight);
 	    var padding = overflow / 2;
 
 	    $('#block-views-calendar-home-page-week').css({'top': padding});
-	    console.log(overflow);
+
 	    if(calHeight > homeHeight) {
-		$('.calendar-calendar table').height($('.view-calendar').height() - $('.view-header').height() - (overflow*3));
+		$('.section-home').height($('.view-calendar').height() + overflow);
 	    }
 	}
     }
@@ -325,6 +325,8 @@ $(document).ready(function($) {
     $(window).resize(function () {
 	onResize();
     });
+
+    onResize();
 
     if(!isFront || !isMes) {
 	if(!isMobile) {
